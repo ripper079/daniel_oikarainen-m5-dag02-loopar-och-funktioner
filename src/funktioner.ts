@@ -45,7 +45,6 @@ export function ärÖppet(veckodag: string, klockslag: number): boolean {
   console.log("isWeekend är", isWeekend);
   console.log("klockslag är", klockslag);
   
-
   //Helg
   if (isWeekend){
     if (klockslag >= 9 && klockslag < 16)
@@ -56,29 +55,59 @@ export function ärÖppet(veckodag: string, klockslag: number): boolean {
     if (klockslag >= 7 && klockslag < 18)
       return true;
   }
-
   
   return false;
 }
 
 // 5. Summan av alla tal i listan, med en loop. summa([1, 2, 3]) ger 6.
 export function summa(tal: number[]): number {
-  // TODO
+  const numberElements: number = tal.length;
+
+  if (numberElements === 0) return 0;
+
+  let sum: number = 0;
+  tal.forEach((singleNumber) => sum += singleNumber);
+
+  return sum;
 }
 
 // 6. Medelvärdet. snitt([2, 4, 6]) ger 4. Tom lista ger 0.
 export function snitt(tal: number[]): number {
-  // TODO
+  if (tal.length === 0) return 0;
+
+  let sum: number = 0;
+  tal.forEach((singleNumber) => sum += singleNumber);
+  const averageNumber: number = sum / tal.length;
+
+  return averageNumber;
 }
 
 // 7. Det största talet, med en loop. största([3, 9, 4]) ger 9. Tom lista ger undefined.
 export function största(tal: number[]): number | undefined {
-  // TODO
+  if (tal.length === 0) return undefined;
+
+  //Vi sätter högsta talet på första elementet som referens
+  let maxvalue: number = tal[0];
+  for (let i = 1; i < tal.length; i++){
+    //Detta betyder nytt max värde
+    if (tal[i] > maxvalue) {
+      maxvalue = tal[i];
+    }      
+  }
+
+  return maxvalue;
 }
 
 // 8. Upprepa en text. upprepa("ab", 3) ger "ababab". Använd en loop.
 export function upprepa(text: string, antal: number): string {
-  // TODO
+  if (antal <= 0) return "";
+
+  let textRepeat: string = "";
+  for (let i = 0; i < antal; i++){
+    textRepeat += text;
+  }
+
+  return textRepeat;
 }
 
 // 9. En kvittorad. kvittorad("Kaffe", 2, 32) ger "2 x Kaffe: 64 kr".
