@@ -7,6 +7,13 @@
 //    Decimaltal med två decimaler och komma: formateraPris(91.8) ger "91,80 kr".
 export function formateraPris(pris: number): string {
   // TODO
+  //Heltal
+  if (Number.isInteger(pris))
+    return pris + " kr";
+
+  return pris.toFixed(2).replace(".", ",") + " kr";
+  //Flyttal
+
 }
 
 // 2. Momsdelen av ett pris med 12 % moms (fiktiv sats), avrundad till två decimaler.
