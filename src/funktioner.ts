@@ -120,8 +120,9 @@ export function kvittorad(namn: string, antal: number, pris: number): string {
 // 10. Pilfunktioner. Skriv dem själv med const och =>.
 //     dubbla(4) ger 8. ärJämnt(4) ger true.
 export const dubbla = (n: number): number => {
-  // TODO
+  return 2*n;
 };
 export const ärJämnt = (n: number): boolean => {
-  // TODO
+  //const isEven: boolean = n % 2 === 0 ? true : false;
+  return  n % 2 === 0 ? true : false;
 };
